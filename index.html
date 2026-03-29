@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/jpg" href="assets/logo.svg">
 <title>Dotty's Thrift — Luxury Thrift for Bold Women</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-
+ 
 :root{
   --pink:#C8145A;
   --pink-light:#e0186a;
@@ -23,7 +24,7 @@ html{scroll-behavior:smooth;}
   --shadow:rgba(200,20,90,0.18);
   --gold:#c9a84c;
 }
-
+ 
 body{
   font-family:'DM Sans',sans-serif;
   background:var(--white);
@@ -31,7 +32,7 @@ body{
   overflow-x:hidden;
   cursor:none;
 }
-
+ 
 /* ── CUSTOM CURSOR ── */
 .cursor{
   width:9px;height:9px;background:var(--pink);border-radius:50%;
@@ -44,7 +45,7 @@ body{
   transform:translate(-50%,-50%);opacity:.45;
   transition:width .3s,height .3s,opacity .3s;
 }
-
+ 
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
@@ -56,21 +57,20 @@ nav{
   transition:border-color .3s, box-shadow .3s;
 }
 nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.08);}
-
+ 
 .nav-logo{
   display:flex;align-items:center;gap:.7rem;
   font-family:'Cormorant Garamond',serif;
   font-size:1.55rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em;
 }
 .logo-mark{
-  width:36px;height:36px;background:var(--pink);border-radius:50%;
+  width:60px;height:60px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;box-shadow:0 4px 16px var(--shadow);
   flex-shrink:0;
 }
 .logo-mark img{width:100%;height:100%;object-fit:cover;}
-.nav-logo strong{color:var(--pink);}
-
+ 
 .nav-links{display:flex;gap:2.2rem;list-style:none;}
 .nav-links a{
   color:var(--muted);text-decoration:none;font-size:.82rem;
@@ -83,7 +83,7 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
 }
 .nav-links a:hover{color:var(--pink);}
 .nav-links a:hover::after{width:100%;}
-
+ 
 .nav-cta{
   background:var(--pink);color:#fff;padding:.6rem 1.5rem;
   border-radius:100px;font-weight:600;font-size:.82rem;
@@ -92,47 +92,49 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
   transition:background .2s,transform .2s,box-shadow .2s;
 }
 .nav-cta:hover{background:var(--pink-light);transform:translateY(-2px);box-shadow:0 8px 28px var(--shadow);}
-
+ 
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:600;background:none;border:none;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
+ 
 .mobile-menu{
   display:none;position:fixed;inset:0;background:var(--white);
-  z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
+  padding:5rem 2rem 2rem;overflow-y:auto;
 }
 .mobile-menu.open{display:flex;}
 .mobile-menu a{
-  font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;
-  color:var(--ink);text-decoration:none;transition:color .2s;
+  font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;
+  color:var(--ink);text-decoration:none;transition:color .2s,border-color .2s,background .2s;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:.6rem 2rem;border-radius:100px;
+  border:1.5px solid var(--border);width:220px;text-align:center;
 }
-.mobile-menu a:hover{color:var(--pink);}
-
+.mobile-menu a:hover{color:var(--pink);border-color:var(--pink);background:var(--pink-blush);}
+ 
 /* ── HERO ── */
 #hero{
-  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;display:flex;
   padding-top:70px;overflow:hidden;
+  align-items:center;justify-content:center;
 }
-
+ 
 .hero-left{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:5rem 4rem 5rem 8%;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:5rem 8%;text-align:center;position:relative;max-width:800px;width:100%;
 }
-.hero-left::after{
-  content:'';position:absolute;right:-1px;top:10%;bottom:10%;
-  width:1px;background:linear-gradient(to bottom,transparent,var(--border),transparent);
-}
-
+.hero-left::after{display:none;}
+ 
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:.6rem;
   font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--pink);margin-bottom:1.6rem;
+  color:var(--pink);margin-bottom:1.6rem;justify-content:center;
   animation:fadeUp .7s .1s ease both;
 }
 .eyebrow-line{width:28px;height:1.5px;background:var(--pink);border-radius:2px;flex-shrink:0;}
-
+ 
 .hero-title{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(3.6rem,5.8vw,6.2rem);
@@ -141,14 +143,14 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
 }
 .hero-title .italic{font-style:italic;color:var(--pink);}
 .hero-title .outline{-webkit-text-stroke:2px var(--ink);color:transparent;}
-
+ 
 .hero-desc{
   margin-top:1.6rem;font-size:.97rem;color:var(--muted);line-height:1.85;
-  max-width:400px;font-weight:300;
+  max-width:480px;font-weight:300;
   animation:fadeUp .7s .4s ease both;
 }
 .hero-actions{
-  margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;
+  margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
   animation:fadeUp .7s .55s ease both;
 }
 .btn-primary{
@@ -165,9 +167,9 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
   transition:border-color .2s,color .2s;letter-spacing:.02em;
 }
 .btn-ghost:hover{border-color:var(--pink);color:var(--pink);}
-
+ 
 .hero-trust{
-  margin-top:3rem;display:flex;align-items:center;gap:1.2rem;
+  margin-top:3rem;display:flex;align-items:center;gap:1.2rem;justify-content:center;
   animation:fadeUp .7s .7s ease both;
 }
 .trust-avatars{display:flex;}
@@ -179,7 +181,7 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
 .trust-avatar img{width:100%;height:100%;object-fit:cover;}
 .trust-text{font-size:.78rem;color:var(--muted);line-height:1.5;}
 .trust-text strong{color:var(--ink);font-weight:600;}
-
+ 
 .hero-right{
   background:var(--pink-blush);
   display:flex;align-items:stretch;position:relative;overflow:hidden;
@@ -190,7 +192,7 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
   background:radial-gradient(circle,rgba(200,20,90,.12),transparent 70%);
   pointer-events:none;
 }
-
+ 
 .hero-collage{
   width:100%;display:grid;grid-template-columns:1fr 1fr;
   grid-template-rows:1fr 1fr;gap:.7rem;padding:1.8rem;
@@ -213,7 +215,7 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
   padding:.3rem .85rem;border-radius:100px;
   font-size:.65rem;font-weight:700;color:var(--pink);letter-spacing:.07em;text-transform:uppercase;
 }
-
+ 
 .hero-float-card{
   position:absolute;bottom:2rem;right:1.8rem;z-index:2;
   background:#fff;border-radius:18px;padding:1rem 1.3rem;
@@ -228,11 +230,11 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
 }
 .float-text-label{font-size:.65rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.06em;}
 .float-text-val{font-size:.92rem;font-weight:700;color:var(--ink);margin-top:.1rem;}
-
+ 
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-
+ 
 /* ── MARQUEE ── */
 .marquee-wrap{background:var(--ink);padding:.85rem 0;overflow:hidden;}
 .marquee-track{display:flex;gap:0;white-space:nowrap;animation:marquee 24s linear infinite;}
@@ -244,7 +246,7 @@ nav.scrolled{border-color:var(--border);box-shadow:0 4px 40px rgba(200,20,90,0.0
 }
 .marquee-item .dot{color:var(--pink);font-size:.9rem;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
+ 
 /* ── SECTION COMMON ── */
 section{padding:6rem 8%;}
 .section-eyebrow{
@@ -260,7 +262,7 @@ section{padding:6rem 8%;}
 }
 .section-title em{font-style:italic;color:var(--pink);}
 .section-title .outline{-webkit-text-stroke:1.5px var(--ink);color:transparent;}
-
+ 
 /* ── PRODUCTS ── */
 #products{background:var(--cream);}
 .products-top{
@@ -276,9 +278,9 @@ section{padding:6rem 8%;}
   display:flex;flex-direction:column;
 }
 .product-card:hover{transform:translateY(-10px);box-shadow:0 28px 70px rgba(200,20,90,0.13);}
-
+ 
 .product-img{
-  aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--pink-blush);
+  aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--pink-blush);
   flex-shrink:0;
 }
 .product-img img{
@@ -286,7 +288,7 @@ section{padding:6rem 8%;}
   transition:transform .45s ease;display:block;
 }
 .product-card:hover .product-img img{transform:scale(1.07);}
-
+ 
 .product-tag{
   position:absolute;top:1rem;left:1rem;
   background:var(--ink);color:#fff;
@@ -295,7 +297,7 @@ section{padding:6rem 8%;}
   z-index:1;
 }
 .product-tag.corporate{background:var(--pink);}
-
+ 
 .product-wishlist{
   position:absolute;top:1rem;right:1rem;z-index:1;
   width:34px;height:34px;background:#fff;border-radius:50%;
@@ -304,7 +306,7 @@ section{padding:6rem 8%;}
   box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
 .product-card:hover .product-wishlist{opacity:1;transform:scale(1);}
-
+ 
 .product-body{padding:1.2rem 1.4rem 1.5rem;flex:1;display:flex;flex-direction:column;}
 .product-name{
   font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:700;
@@ -322,13 +324,13 @@ section{padding:6rem 8%;}
   font-size:.85rem;transition:transform .2s,background .2s;border:none;cursor:pointer;
 }
 .product-card:hover .product-btn{transform:rotate(-45deg);}
-
+ 
 /* ── LOOKBOOK ── */
 #lookbook{background:var(--white);}
 .lookbook-header{text-align:center;margin-bottom:3rem;}
 .lookbook-header .section-eyebrow{justify-content:center;}
 .lookbook-header p{color:var(--muted);margin-top:.9rem;font-size:.93rem;font-weight:300;}
-
+ 
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -337,7 +339,7 @@ section{padding:6rem 8%;}
 .gallery-item{
   border-radius:20px;overflow:hidden;position:relative;cursor:pointer;
   background:var(--pink-blush);
-  aspect-ratio:1;
+  aspect-ratio:3/4;
 }
 .gallery-item:nth-child(4){grid-column:1;}
 .gallery-item:nth-child(5){grid-column:2;}
@@ -346,7 +348,7 @@ section{padding:6rem 8%;}
   transition:transform .5s ease;
 }
 .gallery-item:hover img{transform:scale(1.06);}
-
+ 
 .gallery-overlay{
   position:absolute;inset:0;
   background:rgba(200,20,90,0);
@@ -365,7 +367,7 @@ section{padding:6rem 8%;}
   background:#fff;padding:.28rem .8rem;border-radius:100px;
   font-size:.65rem;font-weight:700;color:var(--pink);letter-spacing:.06em;text-transform:uppercase;
 }
-
+ 
 /* LIGHTBOX */
 .lightbox{
   display:none;position:fixed;inset:0;background:rgba(10,6,8,0.96);
@@ -391,7 +393,7 @@ section{padding:6rem 8%;}
   font-size:.82rem;font-weight:600;letter-spacing:.05em;transition:background .2s;
 }
 .lightbox-nav button:hover{background:var(--pink);}
-
+ 
 /* ── ABOUT ── */
 #about{background:var(--cream);}
 .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
@@ -401,7 +403,9 @@ section{padding:6rem 8%;}
 .about-pill{
   background:#fff;border:1px solid var(--border);color:var(--ink);
   padding:.45rem 1.1rem;border-radius:100px;font-size:.78rem;font-weight:500;
+  display:inline-flex;align-items:center;gap:.45rem;
 }
+.about-pill svg{stroke:var(--pink);flex-shrink:0;}
 .about-btn{
   display:inline-flex;align-items:center;gap:.5rem;
   background:var(--ink);color:#fff;padding:.9rem 2.2rem;border-radius:100px;
@@ -409,17 +413,17 @@ section{padding:6rem 8%;}
   transition:background .2s,transform .2s;
 }
 .about-btn:hover{background:var(--pink);transform:translateY(-2px);}
-
+ 
 .about-visual{position:relative;}
 .about-img-stack{
   display:grid;grid-template-columns:1fr 1fr;gap:1rem;
 }
 .about-img-main{
   grid-column:span 2;border-radius:22px;overflow:hidden;
-  aspect-ratio:16/9;
+  aspect-ratio:4/3;
 }
 .about-img-main img{width:100%;height:100%;object-fit:cover;display:block;}
-.about-img-sm{border-radius:18px;overflow:hidden;aspect-ratio:.85;}
+.about-img-sm{border-radius:18px;overflow:hidden;aspect-ratio:.75;}
 .about-img-sm img{width:100%;height:100%;object-fit:cover;display:block;}
 .about-stat-overlay{
   background:#fff;border-radius:18px;border:1px solid var(--border);
@@ -429,13 +433,13 @@ section{padding:6rem 8%;}
 .stat-big{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--pink);line-height:1;}
 .stat-label{font-size:.78rem;font-weight:700;color:var(--ink);margin-top:.3rem;letter-spacing:.03em;}
 .stat-desc{font-size:.72rem;color:var(--muted);margin-top:.25rem;line-height:1.5;font-weight:300;}
-
+ 
 /* ── TESTIMONIALS ── */
 #testimonials{background:var(--white);overflow:hidden;}
 .testimonials-header{text-align:center;margin-bottom:3rem;}
 .testimonials-header .section-eyebrow{justify-content:center;}
 .testimonials-header p{color:var(--muted);margin-top:.8rem;font-size:.93rem;font-weight:300;}
-
+ 
 .testimonials-track-wrap{overflow:hidden;position:relative;}
 .testimonials-track-wrap::before,.testimonials-track-wrap::after{
   content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;
@@ -448,21 +452,22 @@ section{padding:6rem 8%;}
 }
 .testimonials-track:hover{animation-play-state:paused;}
 @keyframes scrollTrack{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
+ 
 .testi-card{
   background:var(--cream);border:1px solid var(--border);border-radius:22px;
   padding:2rem;width:340px;flex-shrink:0;
   transition:border-color .2s,box-shadow .2s;
 }
 .testi-card:hover{border-color:var(--pink);box-shadow:0 8px 30px rgba(200,20,90,.08);}
-.testi-stars{color:var(--gold);font-size:1rem;letter-spacing:.05em;margin-bottom:1rem;}
+.testi-stars{display:flex;gap:3px;margin-bottom:1rem;}
+.testi-stars svg{fill:var(--gold);stroke:none;}
 .testi-text{color:var(--muted);font-size:.88rem;line-height:1.75;margin-bottom:1.4rem;font-style:italic;font-weight:300;}
 .testi-author{display:flex;align-items:center;gap:.9rem;}
 .testi-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--pink-pale);}
 .testi-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
 .testi-name{font-weight:700;font-size:.85rem;color:var(--ink);}
 .testi-location{font-size:.72rem;color:var(--muted);font-weight:300;margin-top:.1rem;}
-
+ 
 /* ── WHY ── */
 #why{background:var(--ink);position:relative;overflow:hidden;}
 #why::before{
@@ -487,19 +492,21 @@ section{padding:6rem 8%;}
 }
 .why-card:hover{background:rgba(200,20,90,.1);border-color:rgba(200,20,90,.3);transform:translateY(-5px);}
 .why-icon{
-  width:52px;height:52px;background:rgba(200,20,90,.15);border-radius:14px;
-  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
-  margin-bottom:1.4rem;
+  width:54px;height:54px;background:rgba(200,20,90,.12);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.4rem;border:1px solid rgba(200,20,90,.2);
+  flex-shrink:0;
 }
+.why-icon svg{stroke:var(--pink);}
 .why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.7rem;}
 .why-card p{color:rgba(255,255,255,.45);font-size:.83rem;line-height:1.75;font-weight:300;}
-
+ 
 /* ── FAQs ── */
 #faqs{background:var(--cream);}
 .faqs-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;}
 .faqs-left .section-title{margin:.5rem 0 1rem;}
 .faqs-left>p{color:var(--muted);line-height:1.75;margin-bottom:2rem;font-size:.93rem;font-weight:300;}
-
+ 
 .faq-list{display:flex;flex-direction:column;gap:.6rem;}
 .faq-item{
   background:#fff;border:1px solid var(--border);border-radius:16px;
@@ -524,7 +531,7 @@ section{padding:6rem 8%;}
   color:var(--muted);font-size:.85rem;line-height:1.75;padding:0 1.5rem;font-weight:300;
 }
 .faq-item.open .faq-answer{max-height:200px;padding-bottom:1.4rem;}
-
+ 
 /* ── CTA ── */
 #cta{
   background:var(--pink);padding:6rem 8%;
@@ -562,9 +569,10 @@ section{padding:6rem 8%;}
   display:inline-flex;align-items:center;gap:.5rem;
   background:#fff;color:var(--pink);padding:.9rem 2.2rem;border-radius:100px;
   font-weight:700;font-size:.9rem;text-decoration:none;
-  transition:background .2s,transform .2s,box-shadow .2s;
+  transition:background .2s,transform .2s,box-shadow .2s,color .2s;
   box-shadow:0 6px 28px rgba(0,0,0,.15);
 }
+.btn-whatsapp svg{stroke:currentColor;flex-shrink:0;}
 .btn-whatsapp:hover{background:var(--ink);color:#fff;transform:translateY(-3px);}
 .btn-outline-white{
   border:1.5px solid rgba(255,255,255,.4);color:#fff;
@@ -573,13 +581,13 @@ section{padding:6rem 8%;}
   transition:border-color .2s,background .2s;
 }
 .btn-outline-white:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8);}
-
+ 
 /* ── CONTACT ── */
 #contact{background:var(--white);}
 .contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;}
 .contact-info .section-title{margin:.5rem 0 1rem;}
 .contact-info>p{color:var(--muted);line-height:1.8;margin-bottom:2rem;font-size:.93rem;font-weight:300;}
-
+ 
 .contact-card{
   display:flex;align-items:center;gap:1rem;
   border:1px solid var(--border);border-radius:16px;padding:1.1rem 1.4rem;
@@ -590,11 +598,12 @@ section{padding:6rem 8%;}
 .contact-card:hover{border-color:var(--pink);box-shadow:0 6px 24px rgba(200,20,90,.08);transform:translateX(4px);}
 .contact-icon{
   width:46px;height:46px;border-radius:14px;background:var(--pink-pale);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
+.contact-icon svg{stroke:var(--pink);}
 .contact-detail-lbl{font-size:.68rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.09em;}
 .contact-detail-val{font-size:.9rem;font-weight:600;color:var(--ink);margin-top:.15rem;}
-
+ 
 .enquiry-form{
   background:var(--cream);border:1px solid var(--border);border-radius:28px;padding:2.8rem;
 }
@@ -623,7 +632,7 @@ section{padding:6rem 8%;}
   box-shadow:0 6px 24px var(--shadow);
 }
 .submit-btn:hover{background:var(--pink-light);transform:translateY(-2px);box-shadow:0 10px 30px var(--shadow);}
-
+ 
 /* ── FOOTER ── */
 footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 .footer-top{
@@ -642,12 +651,13 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 .footer-tagline{color:rgba(255,255,255,.35);font-size:.8rem;line-height:1.65;max-width:240px;margin-bottom:1.5rem;font-weight:300;}
 .footer-social{display:flex;gap:.7rem;flex-wrap:wrap;}
 .social-pill{
-  display:inline-flex;align-items:center;gap:.4rem;
+  display:inline-flex;align-items:center;gap:.5rem;
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);
   color:rgba(255,255,255,.6);padding:.45rem 1rem;border-radius:100px;
   text-decoration:none;font-size:.75rem;font-weight:500;
   transition:background .2s,color .2s,border-color .2s;
 }
+.social-pill svg{stroke:currentColor;flex-shrink:0;}
 .social-pill:hover{background:var(--pink);color:#fff;border-color:var(--pink);}
 .footer-col h4{
   color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.1em;
@@ -661,7 +671,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 }
 .footer-bottom p{color:rgba(255,255,255,.25);font-size:.75rem;}
 .footer-bottom a{color:var(--pink);text-decoration:none;}
-
+ 
 /* ── SCROLL REVEAL ── */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:none;}
@@ -669,7 +679,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 .reveal-left.visible{opacity:1;transform:none;}
 .reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease;}
 .reveal-right.visible{opacity:1;transform:none;}
-
+ 
 /* ── TOAST ── */
 .toast{
   position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);
@@ -680,7 +690,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 }
 .toast.show{transform:translateX(-50%) translateY(0);}
 .toast-dot{width:8px;height:8px;background:#25D366;border-radius:50%;flex-shrink:0;}
-
+ 
 /* ── BACK TO TOP ── */
 .back-top{
   position:fixed;bottom:2rem;right:2rem;z-index:400;
@@ -692,7 +702,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 }
 .back-top.visible{opacity:1;transform:translateY(0);}
 .back-top:hover{background:var(--pink-light);}
-
+ 
 /* ── PRODUCT ADD TO CART BUTTON ── */
 .product-btn-atc{
   display:inline-flex;align-items:center;gap:.4rem;
@@ -704,7 +714,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   box-shadow:0 4px 16px var(--shadow);
 }
 .product-btn-atc:hover{background:var(--pink-light);transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow);}
-
+ 
 /* ── NAV CART BUTTON ── */
 .nav-cart-btn{
   position:relative;background:none;border:none;cursor:pointer;
@@ -725,7 +735,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 .cart-badge.visible{opacity:1;transform:scale(1);}
 @keyframes bump{0%,100%{transform:scale(1);}50%{transform:scale(1.4);}}
 .cart-badge.bump{animation:bump .3s ease;}
-
+ 
 /* ── CART OVERLAY ── */
 .cart-overlay{
   position:fixed;inset:0;background:rgba(10,6,8,.5);
@@ -733,7 +743,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   transition:opacity .35s ease;backdrop-filter:blur(4px);
 }
 .cart-overlay.open{opacity:1;pointer-events:all;}
-
+ 
 /* ── CART DRAWER ── */
 .cart-drawer{
   position:fixed;top:0;right:0;bottom:0;width:min(440px,100vw);
@@ -767,7 +777,8 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   height:100%;text-align:center;gap:1rem;padding:3rem 1rem;
 }
-.cart-empty-icon{font-size:4rem;opacity:.3;}
+.cart-empty-icon{opacity:.25;margin-bottom:.5rem;display:flex;justify-content:center;}
+.cart-empty-icon svg{stroke:var(--ink);}
 .cart-empty h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--ink);}
 .cart-empty p{color:var(--muted);font-size:.88rem;font-weight:300;line-height:1.6;}
 .cart-empty-btn{
@@ -847,7 +858,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   display:flex;align-items:center;justify-content:center;gap:.5rem;
 }
 .cart-checkout-btn:hover{background:var(--pink-light);transform:translateY(-2px);}
-
+ 
 /* ── SIZE MODAL ── */
 .size-modal-overlay{
   position:fixed;inset:0;background:rgba(10,6,8,.6);
@@ -891,22 +902,19 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 }
 .size-add-btn:hover:not(:disabled){background:var(--pink-light);transform:translateY(-1px);}
 .size-add-btn:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;box-shadow:none;}
-
+ 
 /* ── TABLET (≤1024px) ── */
 @media(max-width:1024px){
   section{padding:5rem 6%;}
-  #hero{grid-template-columns:1fr;min-height:auto;}
-  .hero-right{min-height:400px;}
+  #hero{min-height:auto;}
   .hero-left{padding:4rem 6%;}
-  .hero-left::after{display:none;}
-  .hero-collage{grid-template-columns:repeat(3,1fr);}
   .about-inner,.contact-inner{grid-template-columns:1fr;gap:3rem;}
   .faqs-inner{grid-template-columns:1fr;gap:3rem;}
   .products-grid{grid-template-columns:1fr 1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
 }
-
+ 
 /* ── MOBILE (≤768px) ── */
 @media(max-width:768px){
   /* Nav */
@@ -914,10 +922,10 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   .hamburger{display:flex;}
   body{cursor:auto;}
   .cursor,.cursor-ring{display:none;}
-
+ 
   /* Sections */
   section{padding:3.5rem 5%;}
-
+ 
   /* Hero */
   .hero-left{padding:3rem 5% 2rem;}
   .hero-title{font-size:clamp(2.6rem,10vw,3.6rem);line-height:1.05;}
@@ -925,51 +933,43 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   .hero-actions{margin-top:1.8rem;gap:.75rem;}
   .btn-primary,.btn-ghost{padding:.8rem 1.6rem;font-size:.84rem;}
   .hero-trust{margin-top:2rem;gap:.9rem;}
-  .hero-right{min-height:auto;}
-  .hero-collage{grid-template-columns:1fr 1fr;gap:.5rem;padding:1.2rem;}
-  .collage-item:nth-child(3){display:none;} /* hide 3rd on very small — 2 even images look cleaner */
-  .hero-float-card{
-    position:relative;bottom:auto;right:auto;
-    margin:0 1.2rem 1.2rem;
-    width:calc(100% - 2.4rem);
-  }
-
+ 
   /* Section headings */
   .section-title{font-size:clamp(1.9rem,7vw,2.6rem);}
-
+ 
   /* Products */
   .products-grid{grid-template-columns:1fr 1fr;}
   .product-name{font-size:1.05rem;}
-
+ 
   /* Lookbook gallery */
   .gallery-grid{grid-template-columns:1fr 1fr;}
   .gallery-item:nth-child(4),.gallery-item:nth-child(5){grid-column:auto;}
-
+ 
   /* Testimonials — make card fill width */
   .testimonials-track-wrap::before,.testimonials-track-wrap::after{width:30px;}
   .testi-card{width:82vw;}
-
+ 
   /* Why */
   .why-grid{grid-template-columns:1fr;}
-
+ 
   /* FAQs */
   .faqs-inner{grid-template-columns:1fr;gap:2rem;}
-
+ 
   /* CTA */
   .cta-title{font-size:clamp(2rem,8vw,2.8rem);}
   .cta-desc{font-size:.88rem;}
   .cta-btns{flex-direction:column;align-items:center;}
   .btn-whatsapp,.btn-outline-white{width:100%;max-width:320px;justify-content:center;text-align:center;}
-
+ 
   /* Contact */
   .contact-inner{grid-template-columns:1fr;gap:2.5rem;}
   .enquiry-form{padding:1.8rem 1.4rem;}
-
+ 
   /* Footer */
   .footer-top{grid-template-columns:1fr;gap:2rem;}
   .footer-bottom{flex-direction:column;text-align:center;}
 }
-
+ 
 /* ── SMALL MOBILE (≤480px) ── */
 @media(max-width:480px){
   section{padding:3rem 4%;}
@@ -988,11 +988,11 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
 </style>
 </head>
 <body>
-
+ 
 <!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-
+ 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#products" onclick="closeMobile()">Products</a>
@@ -1001,14 +1001,14 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   <a href="#testimonials" onclick="closeMobile()">Reviews</a>
   <a href="#faqs" onclick="closeMobile()">FAQ</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
-  <a href="https://wa.me/233257626824" style="color:var(--pink)" target="_blank">Shop Now →</a>
+  <a href="#products" style="color:var(--pink)" target="">Shop Now →</a>
 </div>
-
+ 
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
     <div class="logo-mark">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&q=80" alt="Dotty's Thrift"/>
+      <img src="assets/logo.svg" alt="Dotty's Thrift"/>
     </div>
     Dotty's <strong>Thrift</strong>
   </a>
@@ -1025,13 +1025,13 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       <span class="cart-badge" id="cartBadge">0</span>
     </button>
-    <a href="https://wa.me/233257626824" class="nav-cta" target="_blank">Shop Now</a>
+    <a href="#products" class="nav-cta" target="">Shop Now</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
@@ -1041,42 +1041,23 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     </h1>
     <p class="hero-desc">Curated pre-loved fashion that commands attention — from corporate boardrooms to casual outings. Quality you can see, prices you'll love.</p>
     <div class="hero-actions">
-      <a href="#products" class="btn-primary">✦ Explore Collection</a>
+      <a href="#products" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Explore Collection</a>
       <a href="#lookbook" class="btn-ghost">View Lookbook</a>
     </div>
     <div class="hero-trust">
       <div class="trust-avatars">
-        <div class="trust-avatar"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Customer"/></div>
-        <div class="trust-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80" alt="Customer"/></div>
-        <div class="trust-avatar"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&q=80" alt="Customer"/></div>
-        <div class="trust-avatar"><img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?w=80&q=80" alt="Customer"/></div>
+        <div class="trust-avatar"><img src="assets/16.png" alt="Customer"/></div>
+        <div class="trust-avatar"><img src="assets/17.jpg" alt="Customer"/></div>
+        <div class="trust-avatar"><img src="assets/18.jpg" alt="Customer"/></div>
+        <div class="trust-avatar"><img src="assets/19.jpg" alt="Customer"/></div>
+        <div class="trust-avatar"><img src="assets/20.jpg" alt="Customer"/></div>
+        <div class="trust-avatar"><img src="assets/21.jpg" alt="Customer"/></div>
       </div>
       <div class="trust-text"><strong>Hundreds of bold women</strong><br>already elevated their wardrobe</div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-collage">
-      <div class="collage-item">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80" alt="Luxury fashion"/>
-        <div class="item-badge">New In</div>
-      </div>
-      <div class="collage-item">
-        <img src="https://images.unsplash.com/photo-1611601322175-ef8ec8c85f01?w=400&q=80" alt="Corporate style"/>
-      </div>
-      <div class="collage-item">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4f8a?w=400&q=80" alt="Casual chic"/>
-      </div>
-    </div>
-    <div class="hero-float-card">
-      <div class="float-icon">🚚</div>
-      <div>
-        <div class="float-text-label">Delivery Available</div>
-        <div class="float-text-val">Nationwide Ghana</div>
-      </div>
-    </div>
-  </div>
 </section>
-
+ 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
@@ -1098,7 +1079,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     <span class="marquee-item">Quality Guaranteed <span class="dot">✦</span></span>
   </div>
 </div>
-
+ 
 <!-- PRODUCTS -->
 <section id="products">
   <div class="products-top reveal">
@@ -1110,19 +1091,19 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   </div>
   <div class="products-grid">
     <!-- Featured -->
-    <div class="product-card reveal" data-id="1" data-name="Corporate Skirts &amp; Tops" data-price="180" data-tag="Corporate" data-img="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=80">
+    <div class="product-card reveal" data-id="1" data-name="Corporate Dress" data-price="130" data-tag="Corporate" data-img="assets/1.jpg">
       <div class="product-img">
-        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=80" alt="Corporate Skirts & Tops"/>
+        <img src="assets/1.jpg" alt="Corporate Dress"/>
         <div class="product-tag corporate">Corporate</div>
         <div class="product-wishlist">🤍</div>
       </div>
       <div class="product-body">
-        <div class="product-name">Corporate Skirts & Tops</div>
+        <div class="product-name">Corporate Dress</div>
         <p class="product-desc">Polished, structured pieces that mean business. Own every room you walk into.</p>
         <div class="product-footer">
           <div>
-            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;">From</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 180</div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 130</div>
           </div>
           <button class="product-btn-atc" onclick="openSizePicker(this)">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1132,19 +1113,19 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       </div>
     </div>
     <!-- Card 2 -->
-    <div class="product-card reveal" data-id="2" data-name="Casual Skirts &amp; Tops" data-price="120" data-tag="Casual" data-img="https://images.unsplash.com/photo-1594938298603-c8148c4b4f8a?w=500&q=80">
+    <div class="product-card reveal" data-id="2" data-name="Corporate Dress" data-price="130" data-tag="Corporate" data-img="assets/2.jpg">
       <div class="product-img">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4f8a?w=500&q=80" alt="Casual Skirts & Tops"/>
-        <div class="product-tag">Casual</div>
+        <img src="assets/2.jpg" alt="Corporate Dress"/>
+        <div class="product-tag corporate">Corporate</div>
         <div class="product-wishlist">🤍</div>
       </div>
       <div class="product-body">
-        <div class="product-name">Casual Skirts & Tops</div>
-        <p class="product-desc">Relaxed, effortless, and undeniably chic. For weekends done right.</p>
+        <div class="product-name">Corporate Dress</div>
+        <p class="product-desc">Timeless charm with playful sophistication.</p>
         <div class="product-footer">
           <div>
-            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;">From</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 120</div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 130</div>
           </div>
           <button class="product-btn-atc" onclick="openSizePicker(this)">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1154,19 +1135,19 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       </div>
     </div>
     <!-- Card 3 -->
-    <div class="product-card reveal" data-id="3" data-name="Corporate Dresses" data-price="200" data-tag="Corporate" data-img="https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=500&q=80">
+    <div class="product-card reveal" data-id="3" data-name="Corporate Dresses" data-price="110" data-tag="Corporate" data-img="assets/3.jpg">
       <div class="product-img">
-        <img src="https://images.unsplash.com/photo-1601762603339-fd61e28b698a?w=500&q=80" alt="Corporate Dresses"/>
+        <img src="assets/3.jpg" alt="Corporate Dresses"/>
         <div class="product-tag corporate">Corporate</div>
         <div class="product-wishlist">🤍</div>
       </div>
       <div class="product-body">
-        <div class="product-name">Corporate Dresses</div>
+        <div class="product-name">Corporate Dress</div>
         <p class="product-desc">Elegance meets authority. Make them remember your name.</p>
         <div class="product-footer">
           <div>
-            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;">From</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 200</div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 110</div>
           </div>
           <button class="product-btn-atc" onclick="openSizePicker(this)">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1176,18 +1157,122 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       </div>
     </div>
     <!-- Card 4 -->
-    <div class="product-card reveal" data-id="4" data-name="Casual Dresses" data-price="140" data-tag="Casual" data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80">
+    <div class="product-card reveal" data-id="4" data-name="Casual Dresses" data-price="50" data-tag="Casual" data-img="assets/4.jpg">
       <div class="product-img">
-        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80" alt="Casual Dresses"/>
+        <img src="assets/4.jpg" alt="Casual Dresses"/>
         <div class="product-tag">Casual</div>
         <div class="product-wishlist">🤍</div>
       </div>
       <div class="product-body">
-        <div class="product-name">Casual Dresses</div>
-        <p class="product-desc">Light, free, and full of personality. Dress up or dress down.</p>
+        <div class="product-name">Casual Dress</div>
+        <p class="product-desc">Effortless chic in bold simplicity.</p>
         <div class="product-footer">
           <div>
-            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;">From</div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 50</div>
+          </div>
+          <button class="product-btn-atc" onclick="openSizePicker(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Card 5 -->
+    <div class="product-card reveal" data-id="5" data-name="Casual Dresses" data-price="120" data-tag="Casual" data-img="assets/5.jpg">
+      <div class="product-img">
+        <img src="assets/5.jpg" alt="Casual Dresses"/>
+        <div class="product-tag corporate">Corporate</div>
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Corporate Dress</div>
+        <p class="product-desc">Grace in structure, brilliance in detail.</p>
+        <div class="product-footer">
+          <div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 120</div>
+          </div>
+          <button class="product-btn-atc" onclick="openSizePicker(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Card 6 -->
+    <div class="product-card reveal" data-id="6" data-name="Corporate Dress" data-price="90" data-tag="Corporate" data-img="assets/6.jpg">
+      <div class="product-img">
+        <img src="assets/6.jpg" alt="Corporate Dress"/>
+        <div class="product-tag corporate">Corporate</div>
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Corporate Dress</div>
+        <p class="product-desc">Structured elegance, tailored for Success.</p>
+        <div class="product-footer">
+          <div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 90</div>
+          </div>
+          <button class="product-btn-atc" onclick="openSizePicker(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Card 7 -->
+    <div class="product-card reveal" data-id="7" data-name="Casual Dress" data-price="50" data-tag="Casual" data-img="assets/7.jpg">
+      <div class="product-img">
+        <img src="assets/7.jpg" alt="Casual Dress"/>
+        <div class="product-tag">Casual</div>
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Casual Dress</div>
+        <p class="product-desc">Relaxed style with everyday ease.</p>
+        <div class="product-footer">
+          <div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 50</div>
+          </div>
+          <button class="product-btn-atc" onclick="openSizePicker(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Card 8 -->
+    <div class="product-card reveal" data-id="8" data-name="Casual Dresses" data-price="140" data-tag="Casual" data-img="assets/8.jpg">
+      <div class="product-img">
+        <img src="assets/8.jpg" alt="Casual Dresses"/>
+        <div class="product-tag">Casual </div>
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Casual Dress Top and Skirt</div>
+        <p class="product-desc">Modern flair with effortless flow.</p>
+        <div class="product-footer">
+          <div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 140</div>
           </div>
           <button class="product-btn-atc" onclick="openSizePicker(this)">
@@ -1197,9 +1282,66 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
         </div>
       </div>
     </div>
+
+
+
+
+
+
+    <!-- Card 9 -->
+    <div class="product-card reveal" data-id="9" data-name="Casual Dresses" data-price="150" data-tag="Casual" data-img="assets/9.jpg">
+      <div class="product-img">
+        <img src="assets/9.jpg" alt="Casual Dresses"/>
+        <div class="product-tag">Casual</div>
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Casual Dress Top and Skirt</div>
+        <p class="product-desc">Dynamic Contrast with confident edge.</p>
+        <div class="product-footer">
+          <div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 150</div>
+          </div>
+          <button class="product-btn-atc" onclick="openSizePicker(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- Card 10 -->
+    <div class="product-card reveal" data-id="10" data-name="Casual Dresses" data-price="150" data-tag="Casual" data-img="assets/10.jpg">
+      <div class="product-img">
+        <img src="assets/10.jpg" alt="Casual Dresses"/>
+        <div class="product-tag">Casual</div>
+        <div class="product-wishlist">🤍</div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Casual Dress Top and Skirt</div>
+        <p class="product-desc">Bold harmony of prints, styled with confidence.</p>
+        <div class="product-footer">
+          <div>
+            <div style="font-size:.7rem;color:var(--muted);font-weight:300;letter-spacing:.04em;text-transform:uppercase;"></div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--pink);">GH₵ 150</div>
+          </div>
+          <button class="product-btn-atc" onclick="openSizePicker(this)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </section>
-
+ 
 <!-- LOOKBOOK -->
 <section id="lookbook">
   <div class="lookbook-header reveal">
@@ -1209,33 +1351,33 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   </div>
   <div class="gallery-grid">
     <div class="gallery-item" onclick="openLightbox(0)">
-      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700&q=80" alt="Lookbook 1"/>
+      <img src="assets/14.jpeg" alt="Lookbook 1"/>
       <div class="gallery-label">Featured</div>
       <div class="gallery-overlay"><span>View Look</span></div>
     </div>
     <div class="gallery-item" onclick="openLightbox(1)">
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="Lookbook 2"/>
+      <img src="assets/12.jpeg" alt="Lookbook 2"/>
       <div class="gallery-label">Corporate</div>
       <div class="gallery-overlay"><span>View Look</span></div>
     </div>
     <div class="gallery-item" onclick="openLightbox(2)">
-      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&q=80" alt="Lookbook 3"/>
+      <img src="assets/13.jpeg" alt="Lookbook 3"/>
       <div class="gallery-label">Casual</div>
       <div class="gallery-overlay"><span>View Look</span></div>
     </div>
     <div class="gallery-item" onclick="openLightbox(3)">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Lookbook 4"/>
+      <img src="assets/15.jpeg" alt="Lookbook 4"/>
       <div class="gallery-label">Elegant</div>
       <div class="gallery-overlay"><span>View Look</span></div>
     </div>
     <div class="gallery-item" onclick="openLightbox(4)">
-      <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&q=80" alt="Lookbook 5"/>
+      <img src="assets/11.jpeg" alt="Lookbook 5"/>
       <div class="gallery-label">New In</div>
       <div class="gallery-overlay"><span>View Look</span></div>
     </div>
   </div>
 </section>
-
+ 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox-content">
@@ -1247,7 +1389,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     <button onclick="nextLightbox()">Next →</button>
   </div>
 </div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-inner">
@@ -1257,12 +1399,12 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       <p>At Dotty's Thrift, we believe every bold woman deserves to look and feel luxurious — without breaking the bank. We hand-pick every single piece for quality, style, and that special something.</p>
       <p>Based in Adenta, Greater Accra, we deliver nationwide — because bold style has no boundaries.</p>
       <div class="about-pills">
-        <span class="about-pill">📍 Adenta, Ghana</span>
-        <span class="about-pill">🚚 Nationwide Delivery</span>
-        <span class="about-pill">✓ Hand-Curated</span>
-        <span class="about-pill">💎 Quality First</span>
+        <span class="about-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Adenta, Ghana</span>
+        <span class="about-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Nationwide Delivery</span>
+        <span class="about-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hand-Curated</span>
+        <span class="about-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Quality First</span>
       </div>
-      <a href="https://wa.me/233257626824" class="about-btn" target="_blank">💬 Chat With Us</a>
+      <a href="https://wa.me/233257626824" class="about-btn" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Chat With Us</a>
     </div>
     <div class="about-visual reveal-right">
       <div class="about-img-stack">
@@ -1284,7 +1426,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     </div>
   </div>
 </section>
-
+ 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="testimonials-header reveal">
@@ -1295,90 +1437,90 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   <div class="testimonials-track-wrap">
     <div class="testimonials-track">
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I got the most stunning corporate dress and my colleagues couldn't believe it was thrifted. The quality is absolutely unreal!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Abena"/></div>
+          <div class="testi-avatar"><img src="assets/16.png" alt="Abena"/></div>
           <div><div class="testi-name">Abena Mensah</div><div class="testi-location">East Legon, Accra</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"Fast delivery, beautiful packaging and the skirt fits perfectly. Dotty's Thrift is my go-to for affordable luxury fashion in Ghana."</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80" alt="Efua"/></div>
+          <div class="testi-avatar"><img src="assets/17.jpg" alt="Efua"/></div>
           <div><div class="testi-name">Efua Asante</div><div class="testi-location">Kumasi, Ghana</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I ordered via WhatsApp and the process was so smooth. Got my casual dress in 2 days. Will definitely be ordering again!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&q=80" alt="Ama"/></div>
+          <div class="testi-avatar"><img src="assets/18.jpg" alt="Ama"/></div>
           <div><div class="testi-name">Ama Owusu</div><div class="testi-location">Tema, Ghana</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"The corporate top I bought was exactly as described and looked even better in person. Dotty's has elevated my work wardrobe!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?w=80&q=80" alt="Serwa"/></div>
+          <div class="testi-avatar"><img src="assets/19.jpg" alt="Serwa"/></div>
           <div><div class="testi-name">Serwa Boateng</div><div class="testi-location">Adenta, Accra</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I love that I can look like a million cedis without spending it. This is the best thrift shop in Accra, hands down!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&q=80" alt="Akosua"/></div>
+          <div class="testi-avatar"><img src="assets/20.jpg" alt="Akosua"/></div>
           <div><div class="testi-name">Akosua Frimpong</div><div class="testi-location">Osu, Accra</div></div>
         </div>
       </div>
       <!-- Duplicate for infinite loop -->
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I got the most stunning corporate dress and my colleagues couldn't believe it was thrifted. The quality is absolutely unreal!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="Abena"/></div>
+          <div class="testi-avatar"><img src="assets/16.png" alt="Abena"/></div>
           <div><div class="testi-name">Abena Mensah</div><div class="testi-location">East Legon, Accra</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"Fast delivery, beautiful packaging and the skirt fits perfectly. Dotty's Thrift is my go-to for affordable luxury fashion in Ghana."</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80" alt="Efua"/></div>
+          <div class="testi-avatar"><img src="assets/17.jpg" alt="Efua"/></div>
           <div><div class="testi-name">Efua Asante</div><div class="testi-location">Kumasi, Ghana</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I ordered via WhatsApp and the process was so smooth. Got my casual dress in 2 days. Will definitely be ordering again!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=80&q=80" alt="Ama"/></div>
+          <div class="testi-avatar"><img src="assets/18.jpg" alt="Ama"/></div>
           <div><div class="testi-name">Ama Owusu</div><div class="testi-location">Tema, Ghana</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"The corporate top I bought was exactly as described and looked even better in person. Dotty's has elevated my work wardrobe!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?w=80&q=80" alt="Serwa"/></div>
+          <div class="testi-avatar"><img src="assets/19.jpg" alt="Serwa"/></div>
           <div><div class="testi-name">Serwa Boateng</div><div class="testi-location">Adenta, Accra</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
+        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="14" height="14" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I love that I can look like a million cedis without spending it. This is the best thrift shop in Accra, hands down!"</p>
         <div class="testi-author">
-          <div class="testi-avatar"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&q=80" alt="Akosua"/></div>
+          <div class="testi-avatar"><img src="assets/20.jpg" alt="Akosua"/></div>
           <div><div class="testi-name">Akosua Frimpong</div><div class="testi-location">Osu, Accra</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- WHY US -->
 <section id="why">
   <div class="why-header reveal">
@@ -1386,15 +1528,15 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     <h2 class="section-title">The Dotty's <em>Difference</em></h2>
   </div>
   <div class="why-grid">
-    <div class="why-card reveal"><div class="why-icon">💎</div><h3>Handpicked Quality</h3><p>Every single item is personally selected and inspected. If it doesn't meet our standards, it doesn't make the collection.</p></div>
-    <div class="why-card reveal"><div class="why-icon">💸</div><h3>Luxury at Thrift Prices</h3><p>Dress like the CEO you are without the executive price tag. Bold fashion should be accessible to every woman.</p></div>
-    <div class="why-card reveal"><div class="why-icon">🚚</div><h3>Nationwide Delivery</h3><p>We deliver across Ghana. Your dream outfit comes straight to your door, fast and safely packaged.</p></div>
-    <div class="why-card reveal"><div class="why-icon">👗</div><h3>Style for Every Occasion</h3><p>From Monday morning meetings to Saturday brunch, we have pieces that make you look effortlessly put-together.</p></div>
-    <div class="why-card reveal"><div class="why-icon">💬</div><h3>Easy WhatsApp Shopping</h3><p>No complicated checkout. Just message us on WhatsApp and we guide you through every step personally.</p></div>
-    <div class="why-card reveal"><div class="why-icon">🌿</div><h3>Sustainable Fashion</h3><p>Thrifting is the most stylish thing you can do for the planet. You look good and do good at the same time.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Handpicked Quality</h3><p>Every single item is personally selected and inspected. If it doesn't meet our standards, it doesn't make the collection.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Luxury at Thrift Prices</h3><p>Dress like the CEO you are without the executive price tag. Bold fashion should be accessible to every woman.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><h3>Nationwide Delivery</h3><p>We deliver across Ghana. Your dream outfit comes straight to your door, fast and safely packaged.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg></div><h3>Style for Every Occasion</h3><p>From Monday morning meetings to Saturday brunch, we have pieces that make you look effortlessly put-together.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Easy WhatsApp Shopping</h3><p>No complicated checkout. Just message us on WhatsApp and we guide you through every step personally.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Sustainable Fashion</h3><p>Thrifting is the most stylish thing you can do for the planet. You look good and do good at the same time.</p></div>
   </div>
 </section>
-
+ 
 <!-- FAQs -->
 <section id="faqs">
   <div class="faqs-inner">
@@ -1402,7 +1544,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       <div class="section-eyebrow">FAQ</div>
       <h2 class="section-title">Got <em>Questions?</em></h2>
       <p>We've answered the most common questions. Still need help? We're always just a message away on WhatsApp!</p>
-      <a href="https://wa.me/233257626824" class="btn-primary" target="_blank" style="margin-top:.5rem;">💬 Ask Us Anything</a>
+      <a href="https://wa.me/233257626824" class="btn-primary" target="_blank" style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Ask Us Anything</a>
     </div>
     <div class="faq-list reveal-right">
       <div class="faq-item">
@@ -1432,7 +1574,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     </div>
   </div>
 </section>
-
+ 
 <!-- CTA -->
 <section id="cta">
   <div class="cta-inner reveal">
@@ -1440,12 +1582,12 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     <h2 class="cta-title">Your Wardrobe<br><em>Deserves</em> This</h2>
     <p class="cta-desc">Stop settling for ordinary. Join hundreds of bold Ghanaian women who've already elevated their style. Your next favourite outfit is waiting.</p>
     <div class="cta-btns">
-      <a href="https://wa.me/233257626824" class="btn-whatsapp" target="_blank">💬 Shop on WhatsApp</a>
+      <a href="https://wa.me/233257626824" class="btn-whatsapp" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Shop on WhatsApp</a>
       <a href="#contact" class="btn-outline-white">Send Enquiry</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -1454,24 +1596,24 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       <h2 class="section-title">Let's Find Your<br><em>Perfect</em> Piece</h2>
       <p>Have questions about availability, sizing or delivery? We're always happy to help you find exactly what you're looking for.</p>
       <a href="https://wa.me/233257626824" class="contact-card" target="_blank">
-        <div class="contact-icon">💬</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
         <div><div class="contact-detail-lbl">WhatsApp</div><div class="contact-detail-val">0257 626 824</div></div>
       </a>
       <a href="#" class="contact-card">
-        <div class="contact-icon">👻</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.51 3.58 1.38 5.07L2 22l4.93-1.38A9.953 9.953 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></div>
         <div><div class="contact-detail-lbl">Snapchat</div><div class="contact-detail-val">dottyclera23</div></div>
       </a>
       <div class="contact-card">
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div><div class="contact-detail-lbl">Location</div><div class="contact-detail-val">Adenta, Greater Accra Region, Ghana</div></div>
       </div>
       <div class="contact-card">
-        <div class="contact-icon">🚚</div>
+        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <div><div class="contact-detail-lbl">Delivery</div><div class="contact-detail-val">Available Nationwide</div></div>
       </div>
     </div>
     <div class="enquiry-form reveal-right">
-      <h3>Send an Enquiry ✦</h3>
+      <h3>Send an Enquiry</h3>
       <div class="form-row">
         <div class="fg"><label>Your Name</label><input type="text" id="fname" placeholder="e.g. Ama Asante"/></div>
         <div class="fg"><label>WhatsApp Number</label><input type="tel" id="fphone" placeholder="e.g. 024 000 0000"/></div>
@@ -1488,25 +1630,25 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
         </select>
       </div>
       <div class="fg"><label>Message</label><textarea id="fmsg" placeholder="Tell us your size, budget, occasion or anything else that helps us find the perfect piece for you..."></textarea></div>
-      <button class="submit-btn" onclick="handleSubmit()">✦ Send via WhatsApp</button>
+      <button class="submit-btn" onclick="handleSubmit()" style="display:inline-flex;align-items:center;justify-content:center;gap:.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Send via WhatsApp</button>
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo-wrap">
         <div class="footer-logo-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&q=80" alt="Dotty's Thrift"/>
+          <img src="assets/logo.svg" alt="Dotty's Thrift"/>
         </div>
         Dotty's <strong>Thrift</strong>
       </div>
       <p class="footer-tagline">Luxury thrift fashion for bold, confident women. Based in Adenta, Ghana — delivering nationwide.</p>
       <div class="footer-social">
-        <a href="https://wa.me/233257626824" class="social-pill" target="_blank">💬 WhatsApp</a>
-        <a href="#" class="social-pill">👻 Snapchat</a>
+        <a href="https://wa.me/233257626824" class="social-pill" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>WhatsApp</a>
+        <a href="#" class="social-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.51 3.58 1.38 5.07L2 22l4.93-1.38A9.953 9.953 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>Snapchat</a>
       </div>
     </div>
     <div class="footer-col">
@@ -1535,10 +1677,10 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     <p>Made with 💖 for bold women · <a href="https://wa.me/233257626824">0257 626 824</a></p>
   </div>
 </footer>
-
+ 
 <!-- CART OVERLAY -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-
+ 
 <!-- CART DRAWER -->
 <div class="cart-drawer" id="cartDrawer">
   <div class="cart-header">
@@ -1550,7 +1692,7 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
   </div>
   <div class="cart-body">
     <div class="cart-empty" id="cartEmpty">
-      <div class="cart-empty-icon">🛍️</div>
+      <div class="cart-empty-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
       <h3>Your cart is empty</h3>
       <p>Add some gorgeous pieces and come back here to checkout.</p>
       <button class="cart-empty-btn" onclick="closeCart();document.getElementById('products').scrollIntoView({behavior:'smooth'})">Browse Collection</button>
@@ -1563,13 +1705,14 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
       <div class="cart-summary-row"><span>Delivery</span><span>Confirmed on WhatsApp</span></div>
       <div class="cart-summary-row total"><span>Total</span><span id="cartTotal">GH₵ 0</span></div>
     </div>
-    <div class="cart-note"><strong>📦 Next step:</strong> We'll confirm your order and delivery details via WhatsApp.</div>
-    <button class="cart-checkout-btn" onclick="checkoutViaWhatsApp()">
-      💬 Checkout via WhatsApp
+    <div class="cart-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--pink);flex-shrink:0;display:inline;vertical-align:middle;margin-right:.3rem"><path d="M5 12h13M12 5l7 7-7 7"/></svg><strong>Next step:</strong> We'll confirm your order and delivery details via WhatsApp.</div>
+    <button class="cart-checkout-btn" onclick="checkoutViaWhatsApp()" style="display:inline-flex;align-items:center;justify-content:center;gap:.5rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Checkout via WhatsApp
     </button>
   </div>
 </div>
-
+ 
 <!-- SIZE PICKER MODAL -->
 <div class="size-modal-overlay" id="sizeModalOverlay" onclick="closeSizeModal(event)">
   <div class="size-modal">
@@ -1593,10 +1736,10 @@ footer{background:var(--ink);padding:4.5rem 8% 2rem;}
     <button class="size-add-btn" id="sizeAddBtn" onclick="confirmAddToCart()" disabled>Select a size to continue</button>
   </div>
 </div>
-
+ 
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <div class="toast" id="toast"><div class="toast-dot"></div><span id="toastMsg">Added to cart!</span></div>
-
+ 
 <script>
 // ── CUSTOM CURSOR ──
 const cur = document.getElementById('cursor');
@@ -1615,13 +1758,13 @@ document.querySelectorAll('a,button,.product-card,.gallery-item,.faq-question').
   el.addEventListener('mouseenter', () => { ring.style.width='55px';ring.style.height='55px';ring.style.opacity='.2'; });
   el.addEventListener('mouseleave', () => { ring.style.width='34px';ring.style.height='34px';ring.style.opacity='.45'; });
 });
-
+ 
 // ── NAV ──
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', scrollY > 60);
   document.getElementById('backTop').classList.toggle('visible', scrollY > 400);
 });
-
+ 
 // ── HAMBURGER ──
 const ham = document.getElementById('hamburger');
 const mob = document.getElementById('mobileMenu');
@@ -1631,7 +1774,7 @@ ham.addEventListener('click', () => {
   document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
 });
 function closeMobile() { ham.classList.remove('open'); mob.classList.remove('open'); document.body.style.overflow = ''; }
-
+ 
 // ── SCROLL REVEAL ──
 const revEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
 const revealFallback = setTimeout(() => { revEls.forEach(el => el.classList.add('visible')); }, 800);
@@ -1648,7 +1791,7 @@ revEls.forEach(r => obs.observe(r));
 requestAnimationFrame(() => {
   revEls.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible'); });
 });
-
+ 
 // ── LIGHTBOX ──
 const lightboxImgs = [
   'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=85',
@@ -1668,7 +1811,7 @@ document.addEventListener('keydown', e => {
   if (e.key==='ArrowRight') nextLightbox();
   if (e.key==='ArrowLeft') prevLightbox();
 });
-
+ 
 // ── FAQ ──
 function toggleFaq(el) {
   const item = el.closest('.faq-item');
@@ -1676,7 +1819,7 @@ function toggleFaq(el) {
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
 }
-
+ 
 // ── FORM → WHATSAPP ──
 function handleSubmit() {
   const name = document.getElementById('fname').value.trim();
@@ -1687,14 +1830,14 @@ function handleSubmit() {
   showToast('Redirecting to WhatsApp...');
   setTimeout(() => { window.open(`https://wa.me/233257626824?text=${encodeURIComponent(text)}`, '_blank'); }, 1500);
 }
-
+ 
 // ══════════════════════════════════════
 //  CART SYSTEM
 // ══════════════════════════════════════
-
+ 
 let cart = [];
 let pendingProduct = null;
-
+ 
 // ── Open / Close Cart ──
 function openCart() {
   document.getElementById('cartDrawer').classList.add('open');
@@ -1706,7 +1849,7 @@ function closeCart() {
   document.getElementById('cartOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-
+ 
 // ── Size Picker ──
 function openSizePicker(btn) {
   const card = btn.closest('.product-card');
@@ -1749,7 +1892,7 @@ function confirmAddToCart() {
   document.body.style.overflow = '';
   pendingProduct = null;
 }
-
+ 
 // ── Add to Cart ──
 function addToCart(product) {
   const existing = cart.find(i => i.id === product.id && i.size === product.size);
@@ -1759,7 +1902,7 @@ function addToCart(product) {
   showToast('✓ Added to cart!');
   setTimeout(() => { openCart(); }, 400);
 }
-
+ 
 // ── Update Qty ──
 function updateQty(id, size, delta) {
   const item = cart.find(i => i.id === id && i.size === size);
@@ -1768,13 +1911,13 @@ function updateQty(id, size, delta) {
   if (item.qty <= 0) cart = cart.filter(i => !(i.id === id && i.size === size));
   renderCart(); bumpBadge();
 }
-
+ 
 // ── Remove Item ──
 function removeItem(id, size) {
   cart = cart.filter(i => !(i.id === id && i.size === size));
   renderCart(); bumpBadge();
 }
-
+ 
 // ── Render Cart ──
 function renderCart() {
   const itemsEl = document.getElementById('cartItems');
@@ -1783,19 +1926,19 @@ function renderCart() {
   const subtotalEl = document.getElementById('cartSubtotal');
   const totalEl = document.getElementById('cartTotal');
   const pillEl = document.getElementById('cartCountPill');
-
+ 
   const totalQty = cart.reduce((s, i) => s + i.qty, 0);
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-
+ 
   pillEl.textContent = totalQty + (totalQty === 1 ? ' item' : ' items');
-
+ 
   if (cart.length === 0) {
     emptyEl.style.display = 'flex'; itemsEl.innerHTML = ''; footerEl.style.display = 'none'; return;
   }
   emptyEl.style.display = 'none'; footerEl.style.display = 'block';
   subtotalEl.textContent = 'GH₵ ' + subtotal.toLocaleString();
   totalEl.textContent = 'GH₵ ' + subtotal.toLocaleString();
-
+ 
   itemsEl.innerHTML = cart.map(item => `
     <div class="cart-item">
       <div class="cart-item-img"><img src="${item.img}" alt="${item.name}"/></div>
@@ -1820,7 +1963,7 @@ function renderCart() {
     </div>
   `).join('');
 }
-
+ 
 // ── Badge ──
 function bumpBadge() {
   const badge = document.getElementById('cartBadge');
@@ -1835,7 +1978,7 @@ function bumpBadge() {
     badge.classList.remove('visible');
   }
 }
-
+ 
 // ── WhatsApp Checkout ──
 function checkoutViaWhatsApp() {
   if (cart.length === 0) return;
@@ -1845,7 +1988,7 @@ function checkoutViaWhatsApp() {
   showToast('Opening WhatsApp checkout...');
   setTimeout(() => { window.open(`https://wa.me/233257626824?text=${encodeURIComponent(text)}`, '_blank'); }, 1200);
 }
-
+ 
 // ── Toast ──
 function showToast(msg) {
   const toast = document.getElementById('toast');
@@ -1853,9 +1996,10 @@ function showToast(msg) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
-
+ 
 // Init
 renderCart();
 </script>
 </body>
 </html>
+ 

@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a0a08"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="circleGlow" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#1a1200" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dressGrad" cx="45%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ff8fa0"/>
+      <stop offset="40%" stop-color="#e8355a"/>
+      <stop offset="100%" stop-color="#9e1535"/>
+    </radialGradient>
+    <radialGradient id="dressShine" cx="35%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#ffbcc8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#e8355a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mannequinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d58a"/>
+      <stop offset="100%" stop-color="#c49a20"/>
+    </linearGradient>
+    <linearGradient id="goldRingOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9e87a"/>
+      <stop offset="30%" stop-color="#d4a017"/>
+      <stop offset="60%" stop-color="#f5c842"/>
+      <stop offset="100%" stop-color="#9a6f00"/>
+    </linearGradient>
+    <linearGradient id="goldRingInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faeea0"/>
+      <stop offset="50%" stop-color="#c8890e"/>
+      <stop offset="100%" stop-color="#e8c040"/>
+    </linearGradient>
+    <linearGradient id="leafGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9e27a"/>
+      <stop offset="50%" stop-color="#d4960a"/>
+      <stop offset="100%" stop-color="#c8820a"/>
+    </linearGradient>
+    <linearGradient id="textGradRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff4466"/>
+      <stop offset="50%" stop-color="#cc1133"/>
+      <stop offset="100%" stop-color="#990022"/>
+    </linearGradient>
+    <linearGradient id="textGradGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe066"/>
+      <stop offset="50%" stop-color="#f5b800"/>
+      <stop offset="100%" stop-color="#c48800"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="goldGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="innerGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Subtle background glow behind emblem -->
+  <ellipse cx="450" cy="310" rx="240" ry="220" fill="url(#circleGlow)"/>
+
+  <!-- ====== OUTER GOLD RING ====== -->
+  <!-- Decorative outer dots ring -->
+  <g filter="url(#goldGlow)">
+    <circle cx="450" cy="310" r="218" fill="none" stroke="url(#goldRingOuter)" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.6"/>
+  </g>
+
+  <!-- Outer ring thick -->
+  <circle cx="450" cy="310" r="210" fill="none" stroke="url(#goldRingOuter)" stroke-width="5" filter="url(#goldGlow)"/>
+  <!-- Outer ring thin inner line -->
+  <circle cx="450" cy="310" r="204" fill="none" stroke="#f9e87a" stroke-width="1" opacity="0.5"/>
+
+  <!-- Main circle fill (cream/off-white) -->
+  <circle cx="450" cy="310" r="200" fill="#f5ede0"/>
+  <circle cx="450" cy="310" r="200" fill="none" stroke="url(#goldRingInner)" stroke-width="3"/>
+
+  <!-- Inner ring accent -->
+  <circle cx="450" cy="310" r="194" fill="none" stroke="url(#goldRingOuter)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- ====== LAUREL WREATHS ====== -->
+  <!-- Left laurel branch -->
+  <g transform="translate(248, 300) rotate(-15)" filter="url(#goldGlow)">
+    <!-- Main stem -->
+    <path d="M0,0 Q-20,50 -30,110" stroke="url(#leafGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Leaves left side -->
+    <ellipse cx="-5" cy="15" rx="16" ry="8" fill="url(#leafGold)" transform="rotate(-45,-5,15)"/>
+    <ellipse cx="-10" cy="32" rx="18" ry="9" fill="url(#leafGold)" transform="rotate(-55,-10,32)"/>
+    <ellipse cx="-14" cy="50" rx="19" ry="9" fill="url(#leafGold)" transform="rotate(-50,-14,50)"/>
+    <ellipse cx="-17" cy="68" rx="18" ry="8" fill="url(#leafGold)" transform="rotate(-45,-17,68)"/>
+    <ellipse cx="-20" cy="85" rx="17" ry="8" fill="url(#leafGold)" transform="rotate(-40,-20,85)"/>
+    <ellipse cx="-22" cy="101" rx="15" ry="7" fill="url(#leafGold)" transform="rotate(-35,-22,101)"/>
+    <!-- Leaves right side -->
+    <ellipse cx="5" cy="22" rx="16" ry="8" fill="url(#leafGold)" transform="rotate(40,5,22)" opacity="0.85"/>
+    <ellipse cx="3" cy="40" rx="17" ry="8" fill="url(#leafGold)" transform="rotate(35,3,40)" opacity="0.85"/>
+    <ellipse cx="0" cy="58" rx="17" ry="8" fill="url(#leafGold)" transform="rotate(30,0,58)" opacity="0.85"/>
+    <ellipse cx="-3" cy="75" rx="16" ry="7" fill="url(#leafGold)" transform="rotate(28,-3,75)" opacity="0.85"/>
+    <ellipse cx="-6" cy="91" rx="14" ry="7" fill="url(#leafGold)" transform="rotate(25,-6,91)" opacity="0.85"/>
+    <!-- Berries/tips -->
+    <circle cx="-28" cy="115" r="4" fill="#f5b800"/>
+    <circle cx="-23" cy="120" r="3" fill="#f5b800"/>
+    <circle cx="-18" cy="118" r="3.5" fill="#f5b800"/>
+  </g>
+
+  <!-- Right laurel branch (mirrored) -->
+  <g transform="translate(652, 300) rotate(15) scale(-1,1) translate(-652,-300) translate(248, 300) rotate(-15)" filter="url(#goldGlow)">
+    <path d="M0,0 Q-20,50 -30,110" stroke="url(#leafGold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-5" cy="15" rx="16" ry="8" fill="url(#leafGold)" transform="rotate(-45,-5,15)"/>
+    <ellipse cx="-10" cy="32" rx="18" ry="9" fill="url(#leafGold)" transform="rotate(-55,-10,32)"/>
+    <ellipse cx="-14" cy="50" rx="19" ry="9" fill="url(#leafGold)" transform="rotate(-50,-14,50)"/>
+    <ellipse cx="-17" cy="68" rx="18" ry="8" fill="url(#leafGold)" transform="rotate(-45,-17,68)"/>
+    <ellipse cx="-20" cy="85" rx="17" ry="8" fill="url(#leafGold)" transform="rotate(-40,-20,85)"/>
+    <ellipse cx="-22" cy="101" rx="15" ry="7" fill="url(#leafGold)" transform="rotate(-35,-22,101)"/>
+    <ellipse cx="5" cy="22" rx="16" ry="8" fill="url(#leafGold)" transform="rotate(40,5,22)" opacity="0.85"/>
+    <ellipse cx="3" cy="40" rx="17" ry="8" fill="url(#leafGold)" transform="rotate(35,3,40)" opacity="0.85"/>
+    <ellipse cx="0" cy="58" rx="17" ry="8" fill="url(#leafGold)" transform="rotate(30,0,58)" opacity="0.85"/>
+    <ellipse cx="-3" cy="75" rx="16" ry="7" fill="url(#leafGold)" transform="rotate(28,-3,75)" opacity="0.85"/>
+    <ellipse cx="-6" cy="91" rx="14" ry="7" fill="url(#leafGold)" transform="rotate(25,-6,91)" opacity="0.85"/>
+    <circle cx="-28" cy="115" r="4" fill="#f5b800"/>
+    <circle cx="-23" cy="120" r="3" fill="#f5b800"/>
+    <circle cx="-18" cy="118" r="3.5" fill="#f5b800"/>
+  </g>
+
+  <!-- ====== MANNEQUIN + DRESS ====== -->
+  <!-- Mannequin stand base -->
+  <rect x="436" y="492" width="28" height="14" rx="3" fill="url(#mannequinGrad)"/>
+  <rect x="445" y="460" width="10" height="34" rx="3" fill="url(#mannequinGrad)"/>
+
+  <!-- Mannequin shoulders/body (bust form) -->
+  <ellipse cx="450" cy="220" rx="24" ry="14" fill="url(#mannequinGrad)"/>
+  <path d="M426,220 Q420,228 422,240 L428,250 Q440,262 450,262 Q460,262 472,250 L478,240 Q480,228 474,220Z" fill="url(#mannequinGrad)"/>
+  <!-- Mannequin neck -->
+  <rect x="444" y="206" width="12" height="16" rx="4" fill="url(#mannequinGrad)"/>
+  <!-- Mannequin head (knob) -->
+  <circle cx="450" cy="200" r="9" fill="url(#mannequinGrad)"/>
+  <!-- Mannequin pole top glow -->
+  <circle cx="450" cy="200" r="5" fill="#ffe080" opacity="0.5"/>
+
+  <!-- DRESS - flowing gown -->
+  <!-- Off-shoulder straps -->
+  <path d="M422,222 Q408,218 400,225 Q396,232 404,238 Q416,244 428,240" fill="url(#dressGrad)" opacity="0.9"/>
+  <path d="M478,222 Q492,218 500,225 Q504,232 496,238 Q484,244 472,240" fill="url(#dressGrad)" opacity="0.9"/>
+
+  <!-- Bodice -->
+  <path d="M404,232 Q400,250 402,268 Q412,278 430,284 Q440,286 450,286 Q460,286 470,284 Q488,278 498,268 Q500,250 496,232 Q484,224 472,228 Q460,232 450,234 Q440,232 428,228 Q416,224 404,232Z" fill="url(#dressGrad)"/>
+  <!-- Bodice drape detail -->
+  <path d="M420,238 Q435,248 450,248 Q465,248 480,238" fill="none" stroke="#ff8fa0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M418,250 Q435,258 450,258 Q465,258 482,250" fill="none" stroke="#ff8fa0" stroke-width="1" opacity="0.4"/>
+
+  <!-- Main skirt -->
+  <path d="M402,268 Q390,310 372,360 Q355,410 348,460 Q380,480 420,488 Q435,490 450,490 Q465,490 480,488 Q520,480 552,460 Q545,410 528,360 Q510,310 498,268 Q484,276 470,280 Q460,283 450,284 Q440,283 430,280 Q416,276 402,268Z" fill="url(#dressGrad)"/>
+
+  <!-- Skirt shimmer overlay -->
+  <path d="M402,268 Q390,310 372,360 Q355,410 348,460 Q380,480 420,488 Q435,490 450,490 Q465,490 480,488 Q520,480 552,460 Q545,410 528,360 Q510,310 498,268 Q484,276 470,280 Q460,283 450,284 Q440,283 430,280 Q416,276 402,268Z" fill="url(#dressShine)"/>
+
+  <!-- Skirt fold details -->
+  <path d="M430,290 Q420,360 410,420 Q400,460 398,475" fill="none" stroke="#ff8fa0" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+  <path d="M450,290 Q448,370 445,430 Q443,460 442,478" fill="none" stroke="#ffb0c0" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+  <path d="M468,290 Q478,360 490,420 Q500,460 502,475" fill="none" stroke="#ff8fa0" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- Skirt ruffle bottom -->
+  <path d="M348,460 Q370,468 395,472 Q410,475 420,480 Q432,484 440,487" fill="none" stroke="#e8355a" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <path d="M552,460 Q530,468 505,472 Q490,475 480,480 Q468,484 460,487" fill="none" stroke="#e8355a" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- ====== SPARKLE STARS ====== -->
+  <!-- 4-point stars scattered around dress -->
+  <g fill="#111" opacity="0.85">
+    <!-- Top left star -->
+    <path d="M340,240 L343,252 L352,252 L345,259 L348,271 L340,264 L332,271 L335,259 L328,252 L337,252Z"/>
+    <!-- Bottom right star -->
+    <path d="M560,380 L562,389 L570,389 L564,394 L566,403 L560,398 L554,403 L556,394 L550,389 L558,389Z"/>
+    <!-- Small top right -->
+    <path d="M558,258 L560,264 L566,264 L561,268 L563,274 L558,270 L553,274 L555,268 L550,264 L556,264Z"/>
+    <!-- Small bottom left -->
+    <path d="M342,392 L344,398 L350,398 L345,402 L347,408 L342,404 L337,408 L339,402 L334,398 L340,398Z"/>
+  </g>
+
+  <!-- ====== YEAR DATES ====== -->
+  <!-- Left "20" -->
+  <rect x="278" y="306" width="64" height="32" rx="4" fill="none" stroke="url(#goldRingOuter)" stroke-width="1.5"/>
+  <text x="310" y="328" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="url(#textGradRed)">20</text>
+
+  <!-- Right "25" -->
+  <rect x="558" y="306" width="64" height="32" rx="4" fill="none" stroke="url(#goldRingOuter)" stroke-width="1.5"/>
+  <text x="590" y="328" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="url(#textGradRed)">25</text>
+
+  <!-- ====== ARCHED "DOTTY THRIFT" TEXT ====== -->
+  <defs>
+    <path id="textArc" d="M 200,310 A 250,250 0 0,1 700,310"/>
+  </defs>
+
+  <!-- Text shadow/glow layer -->
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="900" letter-spacing="6" filter="url(#glow)">
+    <textPath href="#textArc" startOffset="50%" text-anchor="middle" fill="#660011" opacity="0.4">DOTTY THRIFT</textPath>
+  </text>
+
+  <!-- Main arched text -->
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="900" letter-spacing="6">
+    <textPath href="#textArc" startOffset="50%" text-anchor="middle" fill="url(#textGradRed)">DOTTY THRIFT</textPath>
+  </text>
+
+  <!-- ====== BOTTOM TAGLINE ====== -->
+  <!-- Tagline decorative lines -->
+  <line x1="160" y1="546" x2="280" y2="546" stroke="url(#goldRingOuter)" stroke-width="1" opacity="0.6"/>
+  <line x1="620" y1="546" x2="740" y2="546" stroke="url(#goldRingOuter)" stroke-width="1" opacity="0.6"/>
+
+  <!-- Tagline text: "LUXURY LOOKS." in gold, "THRIFTED SMART." in red -->
+  <text x="450" y="552" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" letter-spacing="3" fill="url(#textGradGold)" filter="url(#goldGlow)">LUXURY LOOKS.</text>
+  <text x="450" y="576" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" letter-spacing="3" fill="url(#textGradRed)">THRIFTED SMART.</text>
+
+  <!-- ====== CORNER ORNAMENTS ====== -->
+  <!-- Small diamond ornaments in corners of composition -->
+  <path d="M130,40 L136,50 L130,60 L124,50Z" fill="url(#leafGold)" opacity="0.5"/>
+  <path d="M770,40 L776,50 L770,60 L764,50Z" fill="url(#leafGold)" opacity="0.5"/>
+  <path d="M130,560 L136,570 L130,580 L124,570Z" fill="url(#leafGold)" opacity="0.5"/>
+  <path d="M770,560 L776,570 L770,580 L764,570Z" fill="url(#leafGold)" opacity="0.5"/>
+
+  <!-- Small gold dot accents around the ring -->
+  <circle cx="450" cy="110" r="4" fill="url(#leafGold)" opacity="0.8"/>
+  <circle cx="253" cy="200" r="3" fill="url(#leafGold)" opacity="0.6"/>
+  <circle cx="647" cy="200" r="3" fill="url(#leafGold)" opacity="0.6"/>
+</svg>
